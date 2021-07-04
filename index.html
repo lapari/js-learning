@@ -7,18 +7,35 @@
 </head>
 
 <body>
+  <h1>Игра "Угадай число"</h1>
+  <p>Введите число от 0 до 5</p>
+  <p id="resultMessage"></p>
+  <input id="userInput" />
+  <button id="okButton">OK</button>
+  <br/>
+  <img id="resultImage" width="100"/>
+
   <script>
-    while (true) {
+    const userInput = document.getElementById('userInput');
+    const okButton = document.getElementById('okButton');
+    const resultMessage = document.getElementById('resultMessage');
+    const resultImage = document.getElementById('resultImage');
+
+
+    okButton.addEventListener('click', () => {
       let y = Math.floor(Math.random() * 6);
 
-      let number = prompt('Угадайте число');
+      
+      let number = userInput.value;
 
       if (number == y) {
-        alert('Поздравляю! Вы отгадали число :)');
+        resultImage.src = 'https://cameralabs.org/media/lab16/post/10-16/11/fotografii-dikoy-prirody_39.jpg';
+        resultMessage.innerText = 'Поздравляю! Вы отгадали число :)';
       } else {
-        alert('Увы, Вы не отгадали число :(');
+        resultImage.src = 'https://s.mediasole.ru/images/1931/1931461/original.jpg';
+        resultMessage.innerText = `Увы, Вы не отгадали число ${y} :(`;
       }
-    }
+    });
 
   </script>
 </body>
