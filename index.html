@@ -13,12 +13,18 @@
 
       let number = prompt('Угадайте число');
 
+      if (number == '' || number == null) {
+        break;
+      }
+
       if (number == y) {
         alert('Поздравляю! Вы отгадали число :)');
       } else {
         alert('Увы, Вы не отгадали число :(');
       }
     }
+
+    alert('Игра закончена');
 
   </script>
 </body>
