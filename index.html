@@ -8,8 +8,12 @@
 
 <body>
   <script>
-    while (true) {
-      let y = Math.floor(Math.random() * 6);
+    let playerScore = 0; 
+    let computerScore = 0; 
+
+    
+    while (computerScore < 3 && playerScore < 3) {
+      let y = Math.floor(Math.random() * 2);
 
       let number = prompt('Угадайте число');
 
@@ -18,13 +22,22 @@
       }
 
       if (number == y) {
-        alert('Поздравляю! Вы отгадали число :)');
+        playerScore = playerScore + 1;
+
+        alert(`Поздравляю! Вы отгадали число Количество очков  игрока ${playerScore} :)`);
       } else {
-        alert('Увы, Вы не отгадали число :(');
+        computerScore = computerScore + 1;
+        alert(`Увы, Вы не отгадали число ${y} :(  Количество очков компьютера ${computerScore} `);
       }
     }
 
-    alert('Игра закончена');
+    if (playerScore == 3) {
+      alert('Игра закончена, выйграл people');
+    }
+    if (computerScore == 3) {
+      alert('Игра закончена, выйграл computer');
+    }
+
 
   </script>
 </body>
